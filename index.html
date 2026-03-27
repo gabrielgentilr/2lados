@@ -30,27 +30,16 @@
             padding: 0 32px;
         }
 
-        /* ===== CABEÇALHO FIXO COM LOGO ===== */
-        .fixed-header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            z-index: 1000;
-            padding: 20px 32px;
-            background: transparent;
-            transition: background 0.3s ease;
+        /* Logo no topo */
+        .top-logo {
+            text-align: center;
+            padding: 40px 0 20px 0;
+            background-color: #FEFCF5;
         }
-
-        .fixed-header.scrolled {
-            background: #FEFCF5;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-        }
-
-        .logo {
-            height: 80px;
+        .top-logo img {
+            height: 100px;
             width: auto;
-            display: block;
+            max-width: 90%;
         }
 
         /* ===== HERO COM PARALLAX ===== */
@@ -90,6 +79,12 @@
             backdrop-filter: blur(4px);
             color: white;
             border: 1px solid rgba(255,255,255,0.3);
+            display: inline-block;
+            padding: 6px 14px;
+            border-radius: 40px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-bottom: 20px;
         }
 
         .hero-content-center h1 {
@@ -263,7 +258,7 @@
             .two-columns { flex-direction: column; gap: 32px; }
             
             .hero-parallax {
-                background-attachment: scroll; /* parallax desabilitado no mobile (melhor performance) */
+                background-attachment: scroll;
                 min-height: 500px;
             }
             .hero-content-center h1 { font-size: 2rem; }
@@ -274,8 +269,8 @@
             
             .platform-icons span { font-size: 1rem; padding: 6px 14px; }
             
-            .fixed-header { padding: 15px 20px; }
-            .logo { height: 40px; }
+            .top-logo { padding: 30px 0 15px 0; }
+            .top-logo img { height: 70px; }
             
             .btn { padding: 12px 24px; font-size: 0.9rem; }
         }
@@ -296,10 +291,10 @@
 </head>
 <body>
 
-<!-- CABEÇALHO FIXO COM LOGO -->
-<header class="fixed-header" id="header">
-    <img src="logo.png" alt="Os Dois Lados da Mesa" class="logo">
-</header>
+<!-- LOGO NO TOPO (estática, antes da hero) -->
+<div class="top-logo">
+    <img src="logo.png" alt="Os Dois Lados da Mesa">
+</div>
 
 <!-- HERO COM PARALLAX (tela cheia) -->
 <section class="hero-parallax">
@@ -460,18 +455,6 @@
         <p style="font-size: 0.8rem;">© 2026 — Os Dois Lados da Mesa · Conversas reais que transformam carreiras</p>
     </div>
 </footer>
-
-<script>
-    // Efeito de fundo no header ao rolar
-    window.addEventListener('scroll', function() {
-        const header = document.getElementById('header');
-        if (window.scrollY > 50) {
-            header.classList.add('scrolled');
-        } else {
-            header.classList.remove('scrolled');
-        }
-    });
-</script>
 
 </body>
 </html>
