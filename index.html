@@ -30,18 +30,6 @@
             padding: 0 32px;
         }
 
-        /* Logo no topo */
-        .top-logo {
-            text-align: center;
-            padding: 40px 0 20px 0;
-            background-color: #FEFCF5;
-        }
-        .top-logo img {
-            height: 140px;
-            width: auto;
-            max-width: 90%;
-        }
-
         /* ===== HERO COM PARALLAX ===== */
         .hero-parallax {
             height: 100vh;
@@ -72,6 +60,15 @@
             z-index: 2;
             max-width: 800px;
             padding: 0 20px;
+        }
+
+        /* Logo dentro da hero */
+        .hero-logo {
+            height: 160px;
+            width: auto;
+            max-width: 90%;
+            margin-bottom: 20px;
+            display: inline-block;
         }
 
         .hero-content-center .badge {
@@ -264,13 +261,14 @@
             .hero-content-center h1 { font-size: 2rem; }
             .hero-content-center p { font-size: 1rem; }
             
+            .hero-logo {
+                height: 100px;
+            }
+            
             .card { padding: 20px; }
             .card h4 { font-size: 1.3rem; }
             
             .platform-icons span { font-size: 1rem; padding: 6px 14px; }
-            
-            .top-logo { padding: 30px 0 15px 0; }
-            .top-logo img { height: 70px; }
             
             .btn { padding: 12px 24px; font-size: 0.9rem; }
         }
@@ -291,15 +289,12 @@
 </head>
 <body>
 
-<!-- LOGO NO TOPO (estática, antes da hero) -->
-<div class="top-logo">
-    <img src="logo.png" alt="Os Dois Lados da Mesa">
-</div>
-
-<!-- HERO COM PARALLAX (tela cheia) -->
+<!-- HERO COM PARALLAX E LOGO INTEGRADA -->
 <section class="hero-parallax">
     <div class="hero-overlay"></div>
     <div class="hero-content-center">
+        <!-- Logo integrada à hero -->
+        <img src="logo.png" alt="Os Dois Lados da Mesa" class="hero-logo">
         <span class="badge"><i class="fas fa-microphone-alt"></i>  Conversas que conectam</span>
         <h1>Os Dois Lados da Mesa<br><span style="color: #D95C2B;">Seu lugar de fala</span> no mercado de trabalho</h1>
         <p>Participe do podcast que conecta quem busca oportunidades com quem contrata — com conversas reais, sem roteiro e cheias de impacto.</p>
